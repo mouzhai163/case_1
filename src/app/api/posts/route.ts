@@ -18,7 +18,7 @@ export async function POST(request: Request) {
     if (!result.success) {
       return NextResponse.json({
         code: 400,
-        message: "字段校验失败!",
+        message: "字段校验失败!带*的字段都需要填写!",
         errors: result.error,
       });
     }

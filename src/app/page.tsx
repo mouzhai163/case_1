@@ -96,15 +96,21 @@ export default function Page() {
     setTimeout(() => {
       setConfirmLoading(false);
       axios.post("/api/posts", editingRecord).then(res => {
-        setData([...data, res.data.data])
-        setEditingRecord(null)
-        success(res.data.message)
+        if (res.data.code === 200) {
+          setData([...data, res.data.data])
+          setEditingRecord(null)
+          success(res.data.message)
+        } else {
+          error(res.data.message)
+        }
       }).catch(e => {
         error(e.message)
       })
       setOpen(false);
     }, 500);
   }
+
+
   function showModal(): void {
     setOpen(true)
   }
@@ -138,7 +144,7 @@ export default function Page() {
           >
             <div className="space-y-4 pt-2">
               <div>
-                <label className="block text-sm font-medium mb-1 text-gray-700">标题</label>
+                <label className="block text-sm font-medium mb-1 text-gray-700">标题*</label>
                 <Input
                   className="!rounded-md !px-3 !py-2"
                   value={editingRecord?.title || ''}
@@ -147,7 +153,7 @@ export default function Page() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium mb-1 text-gray-700">内容</label>
+                <label className="block text-sm font-medium mb-1 text-gray-700">内容*</label>
                 <Input.TextArea
                   className="!rounded-md !px-3 !py-2"
                   rows={4}
@@ -157,7 +163,7 @@ export default function Page() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium mb-1 text-gray-700">作者</label>
+                <label className="block text-sm font-medium mb-1 text-gray-700">作者*</label>
                 <Input
                   className="!rounded-md !px-3 !py-2"
                   value={editingRecord?.author || ''}
