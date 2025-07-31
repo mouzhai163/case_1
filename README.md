@@ -43,11 +43,11 @@ MONGODB_URI=mongodb://localhost:27017/myapp
 
 ## ✨ 功能概览
 
-- ✅ 文章列表展示（AntD Table）
-- ✅ 添加新文章（AntD Modal + Form）
-- ✅ 编辑文章（支持弹窗、字段自动填充）
-- ✅ 删除文章（AntD Popconfirm 二次确认）
-- ✅ 分页、搜索、表格美化（AntD 内置功能 + TailwindCSS 或少量自定义样式）
+- ✅ 文章列表展示
+- ✅ 添加新文章
+- ✅ 编辑文章
+- ✅ 删除文章
+- ✅ 分页、搜索、表格美化
 
 ---
 
@@ -91,6 +91,6 @@ MONGODB_URI=mongodb://localhost:27017/myapp
 
 - 🎨 [Ant Design](https://ant.design/) — 出色的 UI 组件库
 - 🤖 [ChatGPT] — 提供逻辑、调试与样式帮助
-- 🎥 B 站 UP 主「**就业发动机**」的初级 React 教学视频
+- 🎥 B 站 UP 主「**就业发动机**」的初级 NextJS 教学视频
 
 以上内容均由 GPT 生成 哈哈哈哈哈哈哈哈
